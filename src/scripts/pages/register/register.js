@@ -24,7 +24,23 @@ const Register = {
   },
 
   async afterRender() {
-    console.log('Halaman Register dirender');
+    const registerForm = document.querySelector("#registerForm");
+
+    registerForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const name = document.querySelector("#name").value;
+      const email = document.querySelector("#email").value;
+      const password = document.querySelector("#password").value;
+
+      try {
+        await StoriesApi.register({ name, email, password });
+        alert("Registrasi berhasil! Silakan login.");
+        location.hash = "#/login"; // Pindah ke halaman login otomatis
+      } catch (error) {
+        alert(`Registrasi gagal: ${error.message}`);
+      }
+    });
   },
 };
 
