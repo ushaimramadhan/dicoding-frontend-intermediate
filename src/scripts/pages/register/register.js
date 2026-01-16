@@ -1,3 +1,5 @@
+import StoriesApi from "../../data/api";
+
 const Register = {
   async render() {
     return `

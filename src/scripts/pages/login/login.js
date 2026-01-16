@@ -1,3 +1,5 @@
+import StoriesApi from "../../data/api";
+
 const Login = {
   async render() {
     return `
@@ -20,7 +22,26 @@ const Login = {
   },
 
   async afterRender() {
-    console.log('Halaman Login dirender');
+    const loginForm = document.querySelector("#loginForm");
+
+    loginForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const email = document.querySelector("#email").value;
+      const password = document.querySelector("#password").value;
+
+      try {
+        const result = await StoriesApi.login({ email, password });
+
+        localStorage.setItem("token", result.token);
+        localStorage.setItem("user", JSON.stringify(result));
+
+        alert("Login berhasil!");
+        location.hash = "#/dashboard";
+      } catch (error) {
+        alert(`Login gagal: ${error.message}`);
+      }
+    });
   },
 };
 
