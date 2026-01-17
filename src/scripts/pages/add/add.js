@@ -22,20 +22,33 @@ const Add = {
                 <label for="description">Deskripsi</label>
                 <textarea id="description" class="form-control" rows="3" required></textarea>
             </div>
+            
             <div class="form-group">
                 <label for="photo">Upload Foto</label>
                 <input type="file" id="photo" accept="image/*" required>
             </div>
+            
             <div class="form-group">
                <img id="imagePreview" src="" alt="Preview" style="max-width: 100%; max-height: 300px; display: none; margin-top: 10px; border-radius: 8px;">
             </div>
+
             <div class="form-group">
                 <label>Lokasi (Klik pada peta untuk memilih)</label>
                 <div id="map" style="height: 300px; width: 100%; border-radius: 8px; margin-top: 10px; border: 1px solid #ccc;"></div>
-                <input type="text" id="lat" readonly placeholder="Latitude" style="margin-top:5px; width: 48%;">
-                <input type="text" id="lon" readonly placeholder="Longitude" style="margin-top:5px; width: 48%;">
+                
+                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                  <div style="flex: 1;">
+                    <label for="lat">Latitude</label>
+                    <input type="text" id="lat" class="form-control" readonly placeholder="Latitude">
+                  </div>
+                  <div style="flex: 1;">
+                    <label for="lon">Longitude</label>
+                    <input type="text" id="lon" class="form-control" readonly placeholder="Longitude">
+                  </div>
+                </div>
             </div>
-            <button type="submit" id="buttonAdd">Upload Cerita</button>
+            
+            <button type="submit" id="buttonAdd" style="margin-top: 20px;">Upload Cerita</button>
         </form>
       </div>
     `;
