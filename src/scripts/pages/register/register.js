@@ -35,12 +35,17 @@ const Register = {
       const email = document.querySelector("#email").value;
       const password = document.querySelector("#password").value;
 
+      const loading = document.querySelector("#loadingOverlay");
+      loading.style.display = "flex";
+
       try {
         await StoriesApi.register({ name, email, password });
         alert("Registrasi berhasil! Silakan login.");
-        location.hash = "#/login"; // Pindah ke halaman login otomatis
+        location.hash = "#/login";
       } catch (error) {
         alert(`Registrasi gagal: ${error.message}`);
+      } finally {
+        loading.style.display = "none";
       }
     });
   },

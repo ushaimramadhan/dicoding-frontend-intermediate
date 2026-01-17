@@ -60,15 +60,16 @@ class App {
       navList.innerHTML = `
         <li><a href="#/dashboard">Dashboard</a></li>
         <li><a href="#/add">Tambah Cerita</a></li>
-        <li><button id="logoutButton" style="background:none; border:none; color:inherit; cursor:pointer; font:inherit;">Logout</button></li>
+        <li><a href="#" id="logoutButton">Logout</a></li>
       `;
 
-      const logoutBtn = document.querySelector('#logoutButton');
-      if(logoutBtn) {
-        logoutBtn.addEventListener('click', () => {
-          localStorage.removeItem('token');
-          localStorage.removeItem('user');
-          location.hash = '#/login';
+      const logoutBtn = document.querySelector("#logoutButton");
+      if (logoutBtn) {
+        logoutBtn.addEventListener("click", () => {
+          event.preventDefault();
+          localStorage.removeItem("token");
+          localStorage.removeItem("user");
+          location.hash = "#/login";
           location.reload();
         });
       }

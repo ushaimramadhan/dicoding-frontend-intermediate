@@ -42,7 +42,6 @@ const Add = {
   },
 
   async afterRender() {
-    // 1. Cek Token (Proteksi)
     const token = localStorage.getItem("token");
     if (!token) {
       location.hash = "#/login";
@@ -112,6 +111,9 @@ const Add = {
         formData.append("lon", lon);
       }
 
+      const loading = document.querySelector("#loadingOverlay");
+      loading.style.display = "flex";
+
       try {
         const button = document.querySelector("#buttonAdd");
         button.textContent = "Mengirim...";
@@ -128,6 +130,7 @@ const Add = {
         const button = document.querySelector("#buttonAdd");
         button.textContent = "Upload Cerita";
         button.disabled = false;
+        loading.style.display = "none";
       }
     });
   },

@@ -30,6 +30,9 @@ const Login = {
       const email = document.querySelector("#email").value;
       const password = document.querySelector("#password").value;
 
+      const loading = document.querySelector("#loadingOverlay");
+      loading.style.display = "flex";
+
       try {
         const result = await StoriesApi.login({ email, password });
 
@@ -40,6 +43,8 @@ const Login = {
         location.hash = "#/dashboard";
       } catch (error) {
         alert(`Login gagal: ${error.message}`);
+      } finally {
+      loading.style.display = 'none';
       }
     });
   },
