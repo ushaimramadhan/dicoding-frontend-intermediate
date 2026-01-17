@@ -61,7 +61,7 @@ const Dashboard = {
           <div class="story-card">
             <img src="${story.photoUrl}" alt="${story.name}" class="story-img">
             <div class="story-body">
-              <h3>${story.name}</h3>
+              <h2>${story.name}</h2>
               <p>${story.description}</p>
               <small>${new Date(story.createdAt).toLocaleDateString()}</small>
             </div>
