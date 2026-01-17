@@ -39,8 +39,45 @@ class App {
     const url = getActiveRoute();
     const page = routes[url];
 
-    this.#content.innerHTML = await page.render();
-    await page.afterRender();
+    if (!document.startViewTransition) {
+      this.#content.innerHTML = await page.render();
+      await page.afterRender();
+    } else {
+      document.startViewTransition(async () => {
+        this.#content.innerHTML = await page.render();
+        await page.afterRender();
+      });
+    }
+
+    this._updateNav();
+  }
+
+  _updateNav() {
+    const token = localStorage.getItem('token');
+    const navList = document.querySelector('#nav-list');
+
+    if (token) {
+      navList.innerHTML = `
+        <li><a href="#/dashboard">Dashboard</a></li>
+        <li><a href="#/add">Tambah Cerita</a></li>
+        <li><button id="logoutButton" style="background:none; border:none; color:inherit; cursor:pointer; font:inherit;">Logout</button></li>
+      `;
+
+      const logoutBtn = document.querySelector('#logoutButton');
+      if(logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+          localStorage.removeItem('token');
+          localStorage.removeItem('user');
+          location.hash = '#/login';
+          location.reload();
+        });
+      }
+    } else {
+      navList.innerHTML = `
+        <li><a href="#/login">Login</a></li>
+        <li><a href="#/register">Register</a></li>
+      `;
+    }
   }
 }
 
