@@ -4,7 +4,7 @@ const Login = {
   async render() {
     return `
       <div class="content-container">
-        <h2>Halaman Login</h2>
+        <h1>Halaman Login</h1>
         <form id="loginForm">
             <div class="form-group">
                 <label for="email">Email</label>

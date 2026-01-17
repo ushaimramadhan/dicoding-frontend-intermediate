@@ -4,7 +4,7 @@ const Register = {
   async render() {
     return `
       <div class="content-container">
-        <h2>Halaman Register</h2>
+        <h1>Halaman Register</h1>
         <form id="registerForm">
             <div class="form-group">
                 <label for="name">Nama</label>

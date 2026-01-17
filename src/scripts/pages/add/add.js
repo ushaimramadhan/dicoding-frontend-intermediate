@@ -4,7 +4,7 @@ const Add = {
   async render() {
     return `
       <div class="content-container">
-        <h2>Tambah Cerita Baru</h2>
+        <h1>Tambah Cerita Baru</h1>
         <form id="addStoryForm">
             <div class="form-group">
                 <label for="description">Deskripsi</label>

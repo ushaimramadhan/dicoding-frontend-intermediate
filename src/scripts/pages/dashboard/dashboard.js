@@ -19,7 +19,7 @@ const Dashboard = {
   async render() {
     return `
       <div class="content-container">
-        <h2>Dashboard Cerita</h2>
+        <h1>Dashboard Cerita</h1>
         
         <div id="map" style="height: 400px; width: 100%; margin-bottom: 2rem; border-radius: 8px;"></div>
 
