@@ -1,20 +1,19 @@
-# Front-End Intermediate Submission
+# Story App - Front-End Web Intermediate
 
-Front-End web sederhana sebagai submission akhir kelas *Belajar Pengembangan Web Intermediate*.
+Aplikasi web progresif untuk berbagi cerita, dibangun sebagai tugas akhir kelas **Belajar Pengembangan Web Intermediate**. Proyek ini fokus pada pengalaman pengguna yang inklusif dan integrasi perangkat keras.
 
 ## Fitur Utama
 
-- *Merancang aksesibilitas yang sesuai dengan standar Web Content Accessibility Guidelines (WCAG).*
-- *Merancang transisi halaman yang halus dan sesuai dengan konteks pengguna.*
-- *Mengembangkan akses hardware terkait media, seperti kamera dan mikrofon.*
-- *Merancang aplikasi peta digital yang memanfaatkan perangkat global positioning system (GPS).*
+- **Aksesibilitas (WCAG):** Memenuhi standar *Web Content Accessibility Guidelines* untuk memastikan aplikasi dapat digunakan oleh semua orang.
+- **Integrasi Web API:** Memanfaatkan fitur **GPS/Peta Digital** dan akses **Kamera/Mikrofon** secara langsung dari browser.
+- **Arsitektur Model-View-Presenter (MVP):** Mengorganisir kode dengan pola arsitektur yang terstruktur dan mudah dikelola.
+- **Single Page Application (SPA):** Transisi halaman yang halus dan responsif tanpa memuat ulang browser.
 
-## Screenshots
+## Teknologi & Build Tools
 
-![App Screenshot](url_gambar_disini.png)
+- **UI:** HTML & CSS
+- **Build Tool:** Vite
+- **Language:** JavaScript
 
-## Teknologi
-
-- *Language:* JavaScript
-- *UI:* HTML & CSS
-- *Components:* Arsitektur MVP, SPA, Transition View, Peta digital.
+---
+*Lulus kriteria submission Story App dengan pemenuhan standar aksesibilitas tinggi.*
